@@ -114,15 +114,6 @@ if(isset($appConfig["websiteFQDN"]) && $appConfig["websiteFQDN"]!=""){
             header("location: ".$protocol."://".$appConfig["websiteFQDN"].$pageURL);
         }
     }
-}else{
-    if(strtolower($_SERVER['SERVER_NAME'])==strtolower($_SERVER['COMPUTERNAME'])){
-        if(isset($appConfig["redirectHTTP"])){
-            if($appConfig["redirectHTTP"]){
-
-                header("location: https://".$appConfig["websiteFQDN"].$pageURL);
-            }
-        }
-    }
 }
 
 
@@ -248,7 +239,7 @@ if(isset($_SESSION['authenticated_tech']) and !isset($grab)){
 
 
         <?php
-        if($appConfig["installComplete"] and !isset($grab)){
+        if(isset($appConfig["installComplete"]) and $appConfig["installComplete"] and !isset($grab)){
             //Load the top menu navigation
             include("./app/includes/navigation.php");
         }

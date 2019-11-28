@@ -79,6 +79,7 @@ include ("./app/includes/backendIncludes.php");
                             $domainNameChecked=true;
                             echo "Yes";
                         }else{
+							$domainNameChecked=false;
                             echo "<text class='red'>No</text>";
                         }
                         ?>

@@ -9,7 +9,7 @@ if(isset($_POST["complete_install"])){
 </script>
 <?php
 }
-
+//phpinfo();
 
 
 
@@ -18,9 +18,9 @@ if (isset($_GET["advancedConfig"])){
     include("./app/views/config/index.php");
     //phpinfo();
 
-}else{
-    include ("./app/views/install/welcome.php");
 }
+    include ("./app/views/install/welcome.php");
+
 ?>
 
 

@@ -2,7 +2,7 @@
 //Show the login page if not authenticated and not an error page or the logon challenge hop page
 if($_SESSION["authenticated_basic"]!="true" and substr($goto,0,6)!="/error" and strpos($goto,'login/challenge')==false){
     //Show install page if not completed
-    if($appConfig["installComplete"]){
+    if(isset($appConfig["installComplete"]) and $appConfig["installComplete"]){
 
         include("./app/views/login/index.php");
     }else{
