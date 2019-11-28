@@ -18,14 +18,15 @@ if(!file_exists("./app/config/config.json")){
 
 
 
+
 if (isset($_GET["advancedConfig"])){
     //include("./config/includes/configController.php");
     include("./app/views/config/index.php");
     //phpinfo();
 
-}
+}else{
     include ("./app/views/install/welcome.php");
-
+}
 ?>
 
 

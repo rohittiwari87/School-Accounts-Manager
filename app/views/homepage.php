@@ -1,4 +1,4 @@
-<table class="container">
+<table id="container">
     <tr>
         <th>
             <?php

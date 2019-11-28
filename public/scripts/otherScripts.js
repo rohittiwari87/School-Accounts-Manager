@@ -10,22 +10,16 @@ async function getHTTPResponse(url, formData){
 
     xhr.onload = () => {
 		let response = xhr.response;
-		//console.log(response);
+		console.log(response);
 		return response;
 	}
 	return false;
 
 }
 
-
-
-async function fillWithHTTPResponse(target,url){
-	target = document.getElementById(target);
+async function getInstallChecklist(){
 	
-	if(	target.style.display == "none"){
-	target.style.display = "block";
-	}
-	var url = url;
+	var url = "/install/runChecks.php";
 	 console.log(url);
 
     // send it out
@@ -33,19 +27,18 @@ async function fillWithHTTPResponse(target,url){
     xhr.open("GET", url);
     xhr.send();
 
-    xhr.onloadend = () => {
+    xhr.onload = () => {
 		let response = xhr.response;
-		if(response==null || (response.includes("500") && (response.includes("error") || response.includes("Error")))){
-			target.innerHTML="<div><h3>Failed</h3></div>";
-		}else{
-		target.innerHTML=response;
-		}
-		//console.log(response);
+		document.getElementById('container').innerHTML=response;
+		console.log(response);
 		
 	}
+
+	//console.log("get install checklist");
+	
+	//console.log(response.responseText);
 	
 }
-
 
 
 
